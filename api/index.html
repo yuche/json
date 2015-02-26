@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vue 构造函数 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <!-- <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Lato|Inconsolata' rel='stylesheet' type='text/css'> -->
+        <link rel="icon" href="/vuejs.org/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "api"
+        </script>
+        <link rel="stylesheet" href="/vuejs.org/css/page.css" type="text/css">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="/vuejs.org/js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/vuejs.org/"></a>
+        </div>
+        
+        
+            <div id="header">
+    <a id="logo" href="/vuejs.org/">
+        <img src="/vuejs.org/images/logo.png">
+        <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+        <li><a href="/vuejs.org/guide/" class="nav-link">入门</a></li>
+<li><a href="/vuejs.org/api/" class="nav-link current">API 索引</a></li>
+<li><a href="/vuejs.org/examples/" class="nav-link">示例</a></li>
+<li><a href="http://vuejs.org/blog/" target="_blank" class="nav-link">Blog (英文)</a></li>
+<li><a href="https://github.com/yyx990803/vue" target="_blank" class="nav-link">GitHub</a></li>
+<li><a href="http://vuejs.org/" target="_blank" class="nav-link">English</a></li>
+    </ul>
+</div>
+        
+
+        <div id="main">
+            
+                
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li><a href="/vuejs.org/guide/" class="nav-link">入门</a></li>
+<li><a href="/vuejs.org/api/" class="nav-link current">API 索引</a></li>
+<li><a href="/vuejs.org/examples/" class="nav-link">示例</a></li>
+<li><a href="http://vuejs.org/blog/" target="_blank" class="nav-link">Blog (英文)</a></li>
+<li><a href="https://github.com/yyx990803/vue" target="_blank" class="nav-link">GitHub</a></li>
+<li><a href="http://vuejs.org/" target="_blank" class="nav-link">English</a></li>
+    </ul>
+    <div class="list">
+        <h2>Api</h2>
+        <ul class="menu-root">
+            
+                <li><a href="/vuejs.org/api/index.html" class="sidebar-link current">Vue 构造函数</a></li>
+            
+                <li><a href="/vuejs.org/api/options.html" class="sidebar-link">选项</a></li>
+            
+                <li><a href="/vuejs.org/api/instance-properties.html" class="sidebar-link">实例属性</a></li>
+            
+                <li><a href="/vuejs.org/api/instance-methods.html" class="sidebar-link">实例方法</a></li>
+            
+                <li><a href="/vuejs.org/api/global-api.html" class="sidebar-link">全局 API</a></li>
+            
+                <li><a href="/vuejs.org/api/directives.html" class="sidebar-link">指令</a></li>
+            
+                <li><a href="/vuejs.org/api/filters.html" class="sidebar-link">过滤器</a></li>
+            
+            <li><a href="http://legacy.vuejs.org">旧版 0.10 文档</a></li>
+            <li style="margin:10px 0 3px">
+              <script data-gittip-username="yyx990803"
+                data-gittip-widget="button"
+                src="//gttp.co/v1.js"></script>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="content api with-sidebar">
+    <h1>Vue 构造函数</h1>
+    <div id="ad">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script>
+    </div>
+    <p><code>Vue</code>的构造函数是Vue.js的核心。它允许你创建Vue实例。创建一个Vue实例非常简单明了：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({ <span class="comment">/* options */</span> })
+</pre></td></tr></table></figure>
+
+
+<p>当你初始化一个Vue实例，你需要传递一个包括DOM对象，data对象，mixin方法，生命周期回调函数等内容的option对象。完整列表见<a href="../api/options.html">初始化参数</a>。</p>
+<p>每个Vue实例本质上就是一个ViewModel (因此在本文档中你会看到好多变量名叫<code>vm</code>)。每个实例都有一个DOM对象属性叫<code>$el</code>，它大致相当于MVVM中的V。每个实例也有一个JavaScript对象属性叫<code>$data</code>，相对应的就是MVVM中的M。改变M会触发V的更新。对于双向绑定，用户对V的介入会触发M中的变化。详细请看<a href="../api/instance-properties.html">实例属性</a>。</p>
+<p>初始化的时候，如果你提供了<code>el</code>，那么这个实例就会直接进入编译阶段(compilation phase)。否则只有执行了<code>vm.$mount()</code>才会开始编译。在编译过程，Vue会走遍DOM树来收集遇到的指令(directives)，然后通过这些指令建立数据和DOM的关系。一旦完成，就可以说现在这些DOM节点是被Vue实例来管理了。一个DOM节点只能被一个Vue实例管理，而且不会被2次编译。</p>
+<p>Vue实例通过代理方法访问他们的<code>$data</code>对象，如果你有个变量叫msg，你可以通过<code>vm.$data.msg</code>访问也可以通过<code>vm.msg</code>来访问。看起来有点神奇，但这完全是可选的。你完全可以就用<code>vm.$data.msg</code> 这种方式来访问。但不管怎样，我们仍需要注意到<code>vm</code>和<code>vm.$data</code>的区别，因为前者是不能作为数据对象被别的Vue实例监视的。</p>
+<p>还有一点值得注意的是数据对象(data objects)并不只属于一个Vue实例，多个ViewModel可以监视同一个数据对象，不论是<code>$data</code>本身还是它的属性。当多个组件需要共享一个全局状态数据对象的时候，这个特性就非常有用。</p>
+<p>每个Vue实例也有不少<a href="../api/instance-methods.html">实例方法</a>，包括数据监视，事件通讯和DOM操作。</p>
+<p>最后，<code>Vue</code>的构造函数本身还有几个<a href="../api/global-api.html">全局API</a>，能够让你扩展<code>Vue</code>的类，配置全局属性以及注册全局自定义组件，像components，directives，filters等等。</p>
+
+    <div class="footer">发现了问题或想要贡献？来 Github 给 Vue.js <a href="https://github.com/vuejs/vuejs.org" target="_blank">英文站点</a>或<a href="https://github.com/Jinjiang/vuejs.org/tree/lang-zh" target="_blank">中文翻译</a>来个 Fork 吧！</div>
+</div>
+            
+        </div>
+
+        
+            <script src="/vuejs.org/js/smooth-scroll.min.js"></script>
+            <script src="/vuejs.org/js/common.js"></script>
+        
+
+    </body>
+</html>
