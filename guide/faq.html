@@ -108,7 +108,7 @@
     </div>
     <ul>
 <li><p><strong>为什么Vue.js不支持IE8?</strong></p>
-<p>Vue.js能够在不使用<code>Object.defineProperty</code>的情况下进行脏检查来输出纯真的JavaScript对象语法，这是ECMAScript 5的一个特性。但它只在IE8的DOM元素中起作用，目前没有办法将其适用于JavaScript对象。</p>
+<p>利用ECMASCript5的新特性：<code>Object.defineProperty</code>, Vue.js不借助脏检查就能提供纯正的Javascript对象语法。这一新特性在IE8里只在DOM元素上起作用，而且无法通过polyfill与JavaScript对象兼容。</p>
 </li>
 <li><p><strong>那么Vue.js修改了我的数据喽?</strong></p>
 <p>是也不是。Vue.js只转换正常的属性到getters和setters，这样它才能在属性被访问或更改时得到通知。而序列化时，你的数据将是完全相同。当然，这里有一些注意事项：</p>
