@@ -178,7 +178,7 @@ vm.$<span class="built_in">eval</span>(<span class="string">'msg | uppercase'</s
 <ul>
 <li><strong>templateString</strong> <code>String</code></li>
 </ul>
-<p>Evaluate a piece of template string containing mustache interpolations. Note that this method simply performs string interpolation; attribute directives are not compiled.</p>
+<p>计算一段包含mustache数据的模板字符串。注意：此方法仅仅运行字符串数据；属性指令不会被编译。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre><span class="comment">// assuming vm.msg = 'hello'</span>
@@ -237,7 +237,7 @@ vm.$log(<span class="string">'item'</span>) <span class="comment">// logs vm.ite
 <li><strong>event</strong> <code>String</code> <em>optional</em></li>
 <li><strong>callback</strong> <code>Function</code> <em>optional</em></li>
 </ul>
-<p>如果没有传递变量，那么停止监视所有时间；如果传递了一个事件，那么移除该事件的所有回调；如果事件和回调都被传递，则只移除该回调。</p>
+<p>如果没有传递变量，那么停止监视所有事件；如果传递了一个事件，那么移除该事件的所有回调；如果事件和回调都被传递，则只移除该回调。</p>
 <h2 id="DOM">DOM</h2>
 <blockquote>
 <p>所有 vm 的操作 DOM 的方法都是类似于jQuery中相同功能一样 - 除了被声明为 vm 的 <code>$el</code> 会触发 Vue.js 的转换。对于转化的更多细节可以看 <a href="../guide/transitions.html">Adding Transition Effects</a> 。</p>
