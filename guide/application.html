@@ -169,10 +169,22 @@ app.currentView = <span class="string">'page1'</span>
 4
 5
 6
+7
+8
+9
+10
+11
+12
 </pre></td><td class="code"><pre><span class="comment">// my-component.js</span>
 module.exports = {
+  template: <span class="string">'&lt;span&gt;&lt;/span&gt;'</span>,
+  data: <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+    <span class="keyword">return</span> {
+      msg: <span class="string">'hello!'</span>
+    }
+  }
   created: <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
-    <span class="keyword">this</span>.message = <span class="string">'hello!'</span>
+    console.log(<span class="string">'my-component created!'</span>)
   }
 }
 </pre></td></tr></table></figure>
@@ -233,7 +245,7 @@ describe(<span class="string">'my-component'</span>, <span class="function"><spa
 <p class="tip">因为 Vue.js 指令异步反映数据的更新，当你需要在改变数据之后断言 DOM 的状态时，你需要在一个 <code>Vue.nextTick</code> 回调里完成断言。另外你可以在测试中设置 <code>Vue.config.async = false</code>，这样你就可以在数据改变之后同步断言 DOM 的状态了。</p>
 
 <h2 id="一个示例">一个示例</h2>
-<p><a href="https://github.com/yyx990803/vue-hackernews" target="_blank">Vue.js Hackernews Clone</a> 是一个应用的例子，它把 Browserify + Vueify 用来代码组织、Director.js 用来做路由、HackerNews 官方的 Firebase API 为后端。这不算什么特别大的应用，但它结合并展示了本页面讨论到的各方面概念。</p>
+<p><a href="https://github.com/yyx990803/vue-hackernews" target="_blank">Vue.js Hackernews Clone</a> 是一个应用的例子，它把 Webpack + vue-loader 用来代码组织、Director.js 用来做路由、HackerNews 官方的 Firebase API 为后端。这不算什么特别大的应用，但它结合并展示了本页面讨论到的各方面概念。</p>
 
     <div class="footer">发现了问题或想要贡献？来 Github 给 Vue.js <a href="https://github.com/vuejs/vuejs.org" target="_blank">英文站点</a>或<a href="https://github.com/Jinjiang/vuejs.org/tree/lang-zh" target="_blank">中文翻译</a>来个 Fork 吧！</div>
 </div>
